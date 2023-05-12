@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    font-family: Proxima, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-size: 50px;
+    font-family: Impact, 'Haettenschweiler', 'Arial Narrow Bold', sans-serif;
+    background-color: #ff5252;
+    /* background-color: linear-gradient(#ff5252, #388e3c); */
+    padding: 20px;
+}
+
+
+
+a {
+    background-color: transparent;
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+    /* 2 */
+  }
+
+body{
+    background-color: #388E3C;
+  }
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  input{
+    margin-top: .5rem;
+    font: 15px;
+  }
+  
+  input::placeholder{
+    font-weight: bold;
+    opacity: .5;
+    color: #c92020;
+    font-size: 12px;
+  }
+  
+/* :: placeholder{
+
+} */
