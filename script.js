@@ -16,46 +16,77 @@
 //walk=walk
 //bike = bicycle
 var apiKey = "7eebaa7dbab54d84b308f239e7d20bbf";
-var mapUrl = `https://api.geoapify.com/v1/routing?waypoints=50.679023,4.569876|50.66170,4.578667&mode=${activityEl}&apiKey=7eebaa7dbab54d84b308f239e7d20bbf`;
-var calorieUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${activityEl}`;
+// var mapUrl = `https://api.geoapify.com/v1/routing?waypoints=${lat}|${lon}&mode=${activityEl}&apiKey=7eebaa7dbab54d84b308f239e7d20bbf`;
+var calorieUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${activityEl}&weight${weightEl}&duration${timeEl}&apikey=Dhk9ms+PxG5Q/IrKGhhu1g==FDn9SWMGkkEHOblQ`;
 var calorieKey = "Dhk9ms+PxG5Q/IrKGhhu1g==FDn9SWMGkkEHOblQ";
 var submitBtn = document.querySelector('#search-btn');
 var activityEl = document.querySelector('#activity');
 var weightEl = document.querySelector('#your-weight');
-var timeEl = document.querySelector('#time-burned');
+var timeEl = document.querySelector('#time-burned');//in mins
 var nameEl = document.querySelector('#your-name');
 var startEl = document.querySelector('#starting-point');
 var endEl = document.querySelector('#ending-point');
+// var lat =
+// var lon = 
 
 var pastBurnEl = document.querySelector('.prevBurns') 
 
-var getCalories = function (event) {
+function getBodyAndStatus(event) {
     event.preventDefault();
-    console.log('clicked', event)
-    weightEl.value;
-    console.log(weightEl.value);
-        // fetch(mapUrl)
-    var name = document.querySelector("#your-name").value;
-    var calories = document.querySelector("#calories-burned").value; 
-    var time = document.querySelector("#time-burned").value;
+const data = [
+    "668 Cedar St, San Carlos, CA 94070, United States of America",
+    "545 Southwest Taylor Street, Portland, OR 97204, United States of America",
+    "1415 Southwest Park Avenue, Portland, OR 97201, United States of America"
+];
 
-    if (!name || !activityEl || !weightEl || !startEl || !endEl) {
-        return;
-      }
-      fetch (mapUrl + apiKey)
-      .then(function (response) {
-        return response.json();
-      })
-      fetch(calorieUrl)
-      .then(function (response) {
-        return response.json();
-      })
-      .then 
+const url = `https://api.geoapify.com/v1/batch/geocode/search?apiKey=7eebaa7dbab54d84b308f239e7d20bbf`;
+
+fetch(url, {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  
+  .then((result) => {
+    if (result.status !== 202) {
+      return Promise.reject(result)
+    } else {
+      console.log("Job ID: " + result.body.id);
+      console.log("Job URL: " + result.body.url);
+    }
+  })
+  .catch(err => console.log(err));
 };
+// var getCalories = function (event) {
+//     event.preventDefault();
+//     console.log('clicked', event)
+//     weightEl.value;
+//     console.log(weightEl.value);
+//         // fetch(mapUrl)
+//     var name = document.querySelector("#your-name").value;
+//     var calories = document.querySelector("#calories-burned").value; 
+//     var time = document.querySelector("#time-burned").value;
 
-submitBtn.addEventListener('click', getCalories);
+//     if (!name || !activityEl || !weightEl || !startEl || !endEl) {
+//         return;
+//       }
+//       fetch (mapUrl)
+//       .then(function (response) {
+//         return response.json();
+//       })
+//       fetch(calorieUrl)
+//       .then(function (response) {
+//         return response.json();
+//       })
+//       .then 
+// };
 
-function displayprevBurns (){
+submitBtn.addEventListener('click', getBodyAndStatus);
 
-}
+// function displayprevBurns (){
+
+// }
 
