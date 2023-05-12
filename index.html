@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="francisco.css" />
   <link rel="stylesheet" href="style.css" />
+
     <title>GeoBurn</title>
 </head>
 
@@ -37,6 +43,27 @@
           <div class="history">
             
             <h4>Previous Burns:</h4>
+            <table class="highlight">
+              <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Starting Point</th>
+                    <th>Ending Point</th>
+                    <th>Calories Burned</th>
+
+
+                </tr>
+              </thead>
+      
+              <tbody class = "prevBurns">
+                  
+                <tr>
+                  <td>Jonathan</td>
+                  <td>Lollipop</td>
+                  <td>$7.00</td>
+                </tr>
+              </tbody>
+            </table>
             <ul id="history-list"></ul>
           </div>
         </div>
@@ -47,5 +74,6 @@
       </div>
     
     <script src="script.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>

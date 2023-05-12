@@ -22,8 +22,7 @@ var activityEl = document.querySelector('#activity');
 var weightEl = document.querySelector('#your-weight');
 var startEl = document.querySelector('#starting-point');
 var endEl = document.querySelector('#ending-point');
-
-    
+var pastBurnEl = document.querySelector('.prevBurns') 
 var getCalories = function (event) {
     event.preventDefault();
     console.log('clicked', event)
@@ -35,3 +34,8 @@ var getCalories = function (event) {
 
 submitBtn.addEventListener('click', getCalories);
 
+
+
+function displayprevBurns (){
+
+}

@@ -15,6 +15,22 @@ header {
     margin-bottom: 10px;
 }
 
+body{
+  background-color: green;
+}
+
+input{
+  margin-top: .5rem;
+  font: 15px;
+}
+
+input::placeholder{
+  font-weight: bold;
+  opacity: .5;
+  color: #ff5252;
+  font-size: 20px;
+}
+
   .container {
     display: flex;
     flex-wrap: wrap;
