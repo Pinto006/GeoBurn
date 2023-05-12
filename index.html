@@ -11,6 +11,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="francisco.css" />
+  <link rel="stylesheet" href="style.css" />
+
     <title>GeoBurn</title>
 </head>
 
@@ -24,7 +26,12 @@
             <input type="text" id="your-name" placeholder="Your Name">
             <br>
             <input type="text" id="your-weight" placeholder="Your Weight -- Be Honest!">
-            <input type="text" id="activity" placeholder="Select your activity...">
+            <!-- <input type="text" id="activity" placeholder="Select your activity..."> -->
+            <select id="activity">
+              <option value="" disabled selected>Select your activity...</option>
+              <option value="walking">Walking</option>
+              <option value="bicycling">Bicycling</option>
+          </select>
             <input type="text" id="starting-point" placeholder="Where are you starting?">
             <input type="text" id="ending-point" placeholder="Where are you going?">
             <button type="submit" id="search-btn">Let's Get Burnin'!</button>
@@ -60,9 +67,8 @@
             <ul id="history-list"></ul>
           </div>
         </div>
-    <div class="weather">
-        <div id="current-weather"></div>
-        <div id="forecast"></div>
+    <div class="map">
+    <div id="calories burned"></div>
     </div>
        
       </div>
