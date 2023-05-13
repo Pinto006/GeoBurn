@@ -7,7 +7,7 @@
 
 header {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     background-color: rgb(235, 93, 93);
     color: whitesmoke;
@@ -16,7 +16,7 @@ header {
 }
 
 body{
-  background-color: green;
+  background-color: whitesmoke;
 }
 
 input{
@@ -27,7 +27,7 @@ input{
 input::placeholder{
   font-weight: bold;
   opacity: .5;
-  color: #ff5252;
+  color: grey;
   font-size: 20px;
 }
 
@@ -137,6 +137,7 @@ input::placeholder{
   #your-name, #your-weight, #activity, #starting-point, #ending-point {
     border: 1px solid black;
     margin: 10px;
+    border-radius: 5px;
   }
 
   #history-list li button {
@@ -160,13 +161,14 @@ input::placeholder{
 }
   
 
-  /* Move search field, search button, and history to the left
-form {
+  /* /* Move search field, search button, and history to the left* */
+
+  /* form {
     display: flex;
     justify-content: flex-start;
   }
   
-  #search-input {
+  /* #search-input {
     margin-right: 10px;
   }
   
@@ -178,6 +180,4 @@ form {
     margin-top: 10px;
     padding-left: 0;
     list-style-type: none;
-  } */
-  
-  
+  } */ 
