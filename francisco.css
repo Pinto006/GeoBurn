@@ -12,6 +12,7 @@ header {
     background-color: #ff5252;
     /* background-color: linear-gradient(#ff5252, #388e3c); */
     padding: 20px;
+    margin-bottom: 10px;
 }
 
 
@@ -47,6 +48,41 @@ body{
     font-size: 12px;
   }
   
+  .search {
+    flex-basis: 30%;
+    margin-right: 0px;
+  }
+
+  .dropdown-trigger {
+    font-weight: bold;
+    opacity: .5;
+    font-size: 12px;
+    color: #c92020;
+    background-color: #388E3C;
+    outline: whitesmoke solid;
+  }
+
+  .material-icons{
+    background-image: url("Images/Bike\ Icon.png");
+    background-image: url("Images/Walking\ Icon.png");
+  }
+.btn{
+    border-radius: 10px;
+}
+
+#dropdown1 {
+    font-size: 12px;
+    font-weight: bold;
+    opacity: .5;
+}
+#search-btn{
+    font-weight: bold;
+    opacity: .5;
+    font-size: 20px;
+    color: #c92020;
+    background-color: #388E3C;
+    /* outline: black solid; */
+}
 /* :: placeholder{
 
 } */

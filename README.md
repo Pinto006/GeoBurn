@@ -7,7 +7,7 @@ This webpage was built to assist the user in dertermining how many calories a sp
 ## Technologies Used 
 Ninjas API - https://api-ninjas.com/api/caloriesburned
 GeoApify - https://apidocs.geoapify.com/
-Materialize - 
+Materialize - https://materializecss.com/
 
 ## Installation
 
@@ -29,10 +29,6 @@ Francisco Verdugo Del Real
 ## License
 
 No License 
-
-## Features ??
-
-If your project has a lot of features, list them here.
 
 ## Future Development
 

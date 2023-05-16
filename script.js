@@ -29,6 +29,10 @@ var endEl = document.querySelector('#ending-point');
 var caloriesBurnedEl = document.querySelector('#calories-burned')
 var historyListEl = document.querySelector('#history-list')
 var searchHistory = [];
+var iconEl = document.querySelector('#icon');
+var userName = document.querySelector('#userName');
+var userCalories = document.querySelector('#userCalories');
+
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -125,6 +129,7 @@ fetch(apiUrl, {
 
 
   displayCaloriesBurned(caloriesBurned);
+  displayIcon();
 })
 .catch(function(error) {
   console.log('Error:', error);
@@ -133,8 +138,31 @@ fetch(apiUrl, {
 }
 
 function displayCaloriesBurned(caloriesBurned) {
-  caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
+  
+  const div = document.createElement('div');
+  const name = document.createElement('h1');
+  const calories = document.createElement('h2');
+ 
+
+  div.classList = 'card'
+  name.innerText = nameEl.value
+  calories.innerText = 'Calories Burned: ' + caloriesBurned;
+ 
+  userName.appendChild(name);
+  userCalories.appendChild(calories);
+    
+ };
+function displayIcon () {
+var icon = document.createElement("img");
+console.log(activityEl.value);
+if (activityEl.value === 'bicycle') {
+  icon.src = 'images/Bike-Icon.png'
+} else {
+  icon.src = 'images/Walking-Icon.png'
 }
+
+iconEl.appendChild(icon)
+};
 
 function displayPreviousBurns() {
   historyListEl.innerHTML = ''; // Clear previous content
@@ -154,4 +182,10 @@ function displayPreviousBurns() {
 
 // Call this function after the page loads to display any existing records
 displayPreviousBurns();
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
 
