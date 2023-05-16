@@ -108,6 +108,26 @@ fetch(apiUrl, {
 .then(function(data) {
   console.log(data);
   var caloriesBurned = data[0].total_calories;
+
+  var caloriesBurned = data[0].total_calories;
+
+
+  // Save data to local storage
+  var timestamp = Date.now().toString();
+  var entry = {
+    name: nameEl.value,
+    start: startEl.value,
+    end: endEl.value,
+    caloriesBurned: caloriesBurned,
+    activity: activity
+  };
+  localStorage.setItem(timestamp, JSON.stringify(entry));
+
+
+
+
+
+
   displayCaloriesBurned(caloriesBurned);
   displayIcon();
 })
@@ -140,8 +160,29 @@ if (activityEl.value === 'bicycle') {
 } else {
   icon.src = 'images/Walking-Icon.png'
 }
- iconEl.appendChild(icon)
+
+iconEl.appendChild(icon)
 };
+
+function displayPreviousBurns() {
+  historyListEl.innerHTML = ''; // Clear previous content
+
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    var entry = JSON.parse(localStorage.getItem(key));
+
+    // Create HTML elements to display the entry
+    var listItem = document.createElement('li');
+  
+    listItem.textContent = `${entry.name}: ${entry.start} to ${entry.end}, Calories Burned: ${entry.caloriesBurned}, Activity: ${entry.activity}`;
+
+    historyListEl.appendChild(listItem);
+  }
+}
+
+// Call this function after the page loads to display any existing records
+displayPreviousBurns();
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.dropdown-trigger');
