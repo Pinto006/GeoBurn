@@ -88,7 +88,8 @@ function getTimeDuration(activity, start, end) {
 function getCaloriesBurned(activity, weight, duration) {
   var weight = weightEl.value;
   var durationMinutes = Math.floor(duration / 60)
-  var apiUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${activity}&weight=${weight}&duration=${durationMinutes}`;
+  var apiNinjaActivity = activity === "bicycle" ? "cycling" : activity;
+  var apiUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${apiNinjaActivity}&weight=${weight}&duration=${durationMinutes}`;
   
   var headers = new Headers()
   headers.append('X-Api-Key', calorieKey);
@@ -103,6 +104,26 @@ fetch(apiUrl, {
 .then(function(data) {
   console.log(data);
   var caloriesBurned = data[0].total_calories;
+
+  var caloriesBurned = data[0].total_calories;
+
+
+  // Save data to local storage
+  var timestamp = Date.now().toString();
+  var entry = {
+    name: nameEl.value,
+    start: startEl.value,
+    end: endEl.value,
+    caloriesBurned: caloriesBurned,
+    activity: activity
+  };
+  localStorage.setItem(timestamp, JSON.stringify(entry));
+
+
+
+
+
+
   displayCaloriesBurned(caloriesBurned);
 })
 .catch(function(error) {
@@ -114,3 +135,23 @@ fetch(apiUrl, {
 function displayCaloriesBurned(caloriesBurned) {
   caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
 }
+
+function displayPreviousBurns() {
+  historyListEl.innerHTML = ''; // Clear previous content
+
+  for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    var entry = JSON.parse(localStorage.getItem(key));
+
+    // Create HTML elements to display the entry
+    var listItem = document.createElement('li');
+  
+    listItem.textContent = `${entry.name}: ${entry.start} to ${entry.end}, Calories Burned: ${entry.caloriesBurned}, Activity: ${entry.activity}`;
+
+    historyListEl.appendChild(listItem);
+  }
+}
+
+// Call this function after the page loads to display any existing records
+displayPreviousBurns();
+
