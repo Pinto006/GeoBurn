@@ -33,6 +33,7 @@ var iconEl = document.querySelector('#icon');
 var userName = document.querySelector('#userName');
 var userCalories = document.querySelector('#userCalories');
 
+
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -139,6 +140,11 @@ if (activityEl.value === 'bicycle') {
 } else {
   icon.src = 'images/Walking-Icon.png'
 }
-iconEl.appendChild(icon)
+ iconEl.appendChild(icon)
 };
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
 
