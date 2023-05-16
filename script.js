@@ -30,6 +30,7 @@ var caloriesBurnedEl = document.querySelector('#calories-burned')
 var historyListEl = document.querySelector('#history-list')
 var searchHistory = [];
 
+
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -114,3 +115,10 @@ fetch(apiUrl, {
 function displayCaloriesBurned(caloriesBurned) {
   caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems);
+  });
