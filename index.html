@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection">
+  <!-- <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="francisco.css" />
+  <!-- <link rel="stylesheet" href="francisco.css" /> -->
   <link rel="stylesheet" href="style.css" />
 
     <title>GeoBurn</title>
@@ -28,10 +28,10 @@
             <input type="text" id="your-weight" placeholder=" Your Weight (in pounds) -- Be Honest!">
             <!-- <input type="text" id="activity" placeholder="Select your activity..."> -->
             <select id="activity">
-              <option value=""disabled selected>Select your activity...</option>
-              <option value="walking">Walking</option>
-              <option value="bicycling">Bicycling</option>
-          </select>
+              <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option>
+              <option value="walk">Walking</option>
+              <option value="bicycle">Bicycling</option>
+            </select>
             <input type="text" id="starting-point" placeholder=" Where are you starting?">
             <input type="text" id="ending-point" placeholder=" Where are you going?">
             <button type="submit" id="search-btn">Let's Get Burnin'!</button>
@@ -43,14 +43,15 @@
           <div class="history">
             
             <h4>Previous Burns:</h4>
+            <br>
             <table class="highlight">
               <thead>
                 <tr>
                     <th>Name</th>
-                    <th>Starting Point</th>
-                    <th>Ending Point</th>
-                    <th>Calories Burned</th>
-                    <th>Activity</th>
+                    <th>Starting</th>
+                    <th>End</th>
+                    <th>Calories Burned </th>
+                    <th> Activity</th>
 
 
                 </tr>
