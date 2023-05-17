@@ -21,7 +21,7 @@
     <div class="container">
         <div class="search">
         <br>
-          <form>
+          <form class="form">
             <h2>Let's get ready to burn!</h2>
             <input type="text" id="your-name" placeholder=" Your Name">
             <br>
@@ -34,15 +34,18 @@
             </select>
             <input type="text" id="starting-point" placeholder=" Where are you starting?">
             <input type="text" id="ending-point" placeholder=" Where are you going?">
-            <button type="submit" id="search-btn">Let's Get Burnin'!</button>
-            
+            <button type="submit" id="search-btn">Let's Get Burnin'!</button> 
           </form>
+
           <br>
-          <div id="userName"></div>
-          <div id="userCalories"></div>
-          <div id="icon"></div>
+            <div class = "userInfo">
+              <div id="userName"></div>
+              <div id="userCalories"></div>
+              <div id="icon"></div>
+            </div>
           <hr>
           <br>
+          </div>
           <div class="history">
             
             <h4>Previous Burns:</h4>
@@ -55,13 +58,10 @@
                     <th>End</th>
                     <th>Calories Burned </th>
                     <th> Activity</th>
-
-
                 </tr>
               </thead>
       
-              <tbody class = "prevBurns">
-                  
+              <tbody class = "prevBurns">  
                 <tr>
                   <td></td>
                   <td></td>
