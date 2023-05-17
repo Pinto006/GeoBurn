@@ -34,6 +34,7 @@ var userName = document.querySelector('#userName');
 var userCalories = document.querySelector('#userCalories');
 var activity;
 var entryArray = [];
+var userInfo = document.querySelector('.userInfo');
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -142,7 +143,6 @@ function displayCaloriesBurned(caloriesBurned) {
   div.classList = 'card'
   name.innerText = nameEl.value
   calories.innerText = 'Calories Burned: ' + caloriesBurned;
- 
   userName.appendChild(name);
   userCalories.appendChild(calories);
   // caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
@@ -164,18 +164,71 @@ function displayIcon () {
   function displayPreviousBurns() {
     historyListEl.innerHTML = ''; // Clear previous content
   
-    entryArray = JSON.parse(localStorage.getItem("entries")) || [];
+    entryArray = JSON.parse(localStorage.getItem('entries')) || [];
+  
+    // Reference the table body element
+    var tableBody = document.querySelector('.prevBurns');
+  
+    // Clear existing table rows
+    tableBody.innerHTML = '';
   
     for (var i = 0; i < entryArray.length; i++) {
+      // Create a new table row
+      var row = document.createElement('tr');
   
-      // Create HTML elements to display the entry
-      var listItem = document.createElement('li');
-    
-      listItem.textContent = `${entryArray[i].name}: ${entryArray[i].start} to ${entryArray[i].end}, Calories Burned: ${entryArray[i].caloriesBurned}, Activity: ${entryArray[i].activity}`;
+      // Create table cells and populate data
+      var nameCell = document.createElement('td');
+      nameCell.textContent = entryArray[i].name;
   
-      historyListEl.appendChild(listItem);
+      var startingCell = document.createElement('td');
+      startingCell.textContent = entryArray[i].start;
+  
+      var endCell = document.createElement('td');
+      endCell.textContent = entryArray[i].end;
+  
+      var caloriesCell = document.createElement('td');
+      caloriesCell.textContent = entryArray[i].caloriesBurned;
+  
+      var activityCell = document.createElement('td');
+      activityCell.textContent = entryArray[i].activity;
+  
+      // Append table cells to the table row
+      row.appendChild(nameCell);
+      row.appendChild(startingCell);
+      row.appendChild(endCell);
+      row.appendChild(caloriesCell);
+      row.appendChild(activityCell);
+  
+      // Append the table row to the table body
+      tableBody.appendChild(row);
+  
+      // Create HTML elements to display the entry in the sidebar
+      // var listItem = document.createElement('li');
+      // listItem.textContent = `${entryArray[i].name}: ${entryArray[i].start} to ${entryArray[i].end}, Calories Burned: ${entryArray[i].caloriesBurned}, Activity: ${entryArray[i].activity}`;
+  
+      // historyListEl.appendChild(listItem);
     }
   }
+  
+  // function displayPreviousBurns() {
+    
+
+  //   historyListEl.innerHTML = ''; // Clear previous content
+  
+  //   entryArray = JSON.parse(localStorage.getItem("entries")) || [];
+  
+  //   for (var i = 0; i < entryArray.length; i++) {
+  
+  //     // Create HTML elements to display the entry
+  //     var listItem = document.createElement('li');
+    
+  //     listItem.textContent = `${entryArray[i].name}: ${entryArray[i].start} to ${entryArray[i].end}, Calories Burned: ${entryArray[i].caloriesBurned}, Activity: ${entryArray[i].activity}`;
+  
+  //     historyListEl.appendChild(listItem);
+
+      
+  //   }
+  // }
   
   // Call this function after the page loads to display any existing records
   displayPreviousBurns();
