@@ -157,7 +157,7 @@ input::placeholder{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M422.7 213.3c-4.7-4.7-12.3-4.7-17 0L256 352 106.3 213.3c-4.7-4.7-12.3-4.7-17 0s-4.7 12.3 0 17l149.3 149.3c4.7 4.7 12.3 4.7 17 0l149.3-149.3c4.6-4.6 4.6-12.3-.2-16.9z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 1.5em;
+    background-size: 1.5em; 
 }
 
 thead {
@@ -188,7 +188,16 @@ thead {
 .previous-burns th {
   background-color: #f2f2f2;
 }
-  
+
+.dropdown-trigger { 
+  font-weight: bold;
+  opacity: .5;
+  font-size: 22px;
+  color: grey;
+  background-color: white;
+  outline: black solid;
+} 
+
 
   /* /* Move search field, search button, and history to the left* */
 
@@ -210,3 +219,60 @@ thead {
     padding-left: 0;
     list-style-type: none;
   } */ 
+
+
+
+  @media only screen and (max-width: 600px){
+    #header{
+        background-image: url(Images/Header.jpeg);
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+        
+    }
+    .sub-title{
+        font-size: 55px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        margin: 30px;
+        font-size: 35px;
+    }
+    .tab-links{
+        margin: 20px;
+        font-size: 45px;
+    }
+    .work-list div{
+        flex-basis: 100%;
+    
+    }
+    .work-list div p{
+        font-size: 30px;
+        display: inline-block;
+    }
+    .contact-left{
+        flex-basis: 100%;
+        margin: 70px;
+        
+    }
+    .contact-left p{
+        font-size: 45px;
+    }
+    .contact-right form{
+        font-size: 45px;
+    }
+    /* .contact-left p{ */
+        /* {font-size: 40px; */
+
+        /* } */
+
+}

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!-- <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"> -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +29,20 @@
             <br>
             <input type="text" id="your-weight" placeholder=" Your Weight (in pounds) -- Be Honest!">
             <!-- <input type="text" id="activity" placeholder="Select your activity..."> -->
-            <select id="activity">
-              <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option>
-              <option value="walk">Walking</option>
-              <option value="bicycle">Bicycling</option>
+            <!-- <select id="activity"> -->
+            <a class="dropdown-trigger btn" href="#" data-target="activity">Select Activity<i class="large material-icons">arrow_drop_down</i></a>
+            <ul id="activity" class='dropdown-content'>
+              <li><a href="#!" value="walk">Walking</a></li>
+              <li><a href="#!" value="bicycle">Bicycling</a></li>
+            </ul>
+                  
+
+
+              <!-- <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option> -->
+              <!-- <option value="walk">Walking</option> -->
+              <!-- <option value="bicycle">Bicycling</option> -->
             </select>
+            
             <input type="text" id="starting-point" placeholder=" Where are you starting?">
             <input type="text" id="ending-point" placeholder=" Where are you going?">
             <button type="submit" id="search-btn">Let's Get Burnin'!</button>
@@ -80,6 +91,7 @@
       </div>
     
     <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script type="text/javascript" src="/materialize.min.js"></script> -->
 </body>
 </html>
