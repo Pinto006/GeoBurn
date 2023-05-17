@@ -33,9 +33,10 @@ No License
 ## Future Development
 
 1. Add a weather API to display the weather for the users route 
-2. Have the ability to avoid major highways on your route
-3. The user tells us how many calories they want to burn and GeoBurn gives them a walking and biking route. (Flip)
+2. Have the ability to avoid major highways and tunnels on your route
+3. The user tells us how many calories they want to burn and GeoBurn gives them a walking and biking route. (Reverse)
 4. The user is able to sort the previous burn columns. 
 5. Add a resturant API.  The user will get their route information and then will be asked if they would like to see resturants on that route.  It they select yes, they can pick a resturant and menu item.  The API will give us the total calories for thier expected order and then offer a new or alternative route to walk/bike off the amount of calories in that meal.  
+6. Take into account the elevation
 
 

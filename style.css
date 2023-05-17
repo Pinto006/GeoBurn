@@ -188,7 +188,11 @@ thead {
 .previous-burns th {
   background-color: #f2f2f2;
 }
-  
+
+.userInfo {
+  min-width: 50%;
+}
+
 
   /* /* Move search field, search button, and history to the left* */
 
