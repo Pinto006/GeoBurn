@@ -1,22 +1,7 @@
-//event listener for Submit Button
-    //connect to geoapify 
-        //collect the time (object)
-    //connect to calorisBurn
-        //convert time to calories burned (object)
-//save route to local storage 
-//save calories burned to local storage
-//display calories 
-//display map of route 
-//display icons
-//when submit button is clicked with new submission, past burn is saved to side bar with date, distance and calories
-
 //Ninja API - Dhk9ms+PxG5Q/IrKGhhu1g==FDn9SWMGkkEHOblQ
 //Geoapify API - 7eebaa7dbab54d84b308f239e7d20bbf
 
-//walk=walk
-//bike = bicycle
 var apiKey = "7eebaa7dbab54d84b308f239e7d20bbf";
-// var mapUrl = `https://api.geoapify.com/v1/routing?waypoints=${lat}|${lon}&mode=${activityEl}&apiKey=7eebaa7dbab54d84b308f239e7d20bbf`;
 var calorieUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${activityEl}&weight=${weightEl}&duration=${timeEl}&apikey=Dhk9ms+PxG5Q/IrKGhhu1g==FDn9SWMGkkEHOblQ`;
 var calorieKey = "Dhk9ms+PxG5Q/IrKGhhu1g==FDn9SWMGkkEHOblQ";
 var submitBtn = document.querySelector('#search-btn');
@@ -36,6 +21,7 @@ var activity;
 var entryArray = [];
 var userInfo = document.querySelector('.userInfo');
 
+//event listener for Submit Button
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
 
@@ -43,11 +29,12 @@ submitBtn.addEventListener('click', function(event) {
   var weight = weightEl.value;
   var start = startEl.value;
   var end = endEl.value;
-
+  
   getTimeDuration(activity, start, end);
+  
 });
 
-
+//function to call Geoapify API
 function getTimeDuration(activity, start, end) {
   var geocodingApiUrl = `https://api.geoapify.com/v1/geocode/search?text=${start}&format=json&apiKey=${apiKey}`;
 
@@ -83,20 +70,23 @@ function getTimeDuration(activity, start, end) {
               var weight = weightEl.value;
               var duration = data.features[0].properties.time;
               getCaloriesBurned(activity, weight, duration);
+              
             });
         });
     })
     .catch(function(error) {
       console.log('Error:', error);
     });
+    
 }
-
+//function to call Calories Burned Ninja API
 function getCaloriesBurned(activity, weight, duration) {
   var weight = weightEl.value;
   var durationMinutes = Math.floor(duration / 60)
+  //update the activiy name to Ninjas prerferred name for bicycle
   var apiNinjaActivity = activity === "bicycle" ? "cycling" : activity;
   var apiUrl = `https://api.api-ninjas.com/v1/caloriesburned?activity=${apiNinjaActivity}&weight=${weight}&duration=${durationMinutes}`;
-  
+  //Ninja API requires key in the header
   var headers = new Headers()
   headers.append('X-Api-Key', calorieKey);
 
@@ -111,8 +101,7 @@ fetch(apiUrl, {
   console.log(data);
   var caloriesBurned = data[0].total_calories;
   // Save data to local storage
-  // var timestamp = Date.now().toString();
-  var entry = {
+   var entry = {
     name: nameEl.value,
     start: startEl.value,
     end: endEl.value,
@@ -121,34 +110,32 @@ fetch(apiUrl, {
   };
   entryArray.push(entry);
   localStorage.setItem("entries", JSON.stringify(entryArray));
+  //calling all needed functions
   displayPreviousBurns();
-
+  clearBox();
   displayCaloriesBurned(caloriesBurned);
   displayIcon();
+  
 })
 .catch(function(error) {
   console.log('Error:', error);
 });
 
 }
-
-
+//function to display total calores burned 
 function displayCaloriesBurned(caloriesBurned) {
-
+  
   const div = document.createElement('div');
   const name = document.createElement('h1');
   const calories = document.createElement('h2');
  
-
   div.classList = 'card'
   name.innerText = nameEl.value
   calories.innerText = 'Calories Burned: ' + caloriesBurned;
   userName.appendChild(name);
   userCalories.appendChild(calories);
-  // caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
-
 };
-
+//function to display icon based on activity chosen
 function displayIcon () {
   var icon = document.createElement("img");
   console.log(activityEl.value);
@@ -157,10 +144,16 @@ function displayIcon () {
   } else {
     icon.src = 'images/Walking-Icon.png'
   }
-  
-  iconEl.appendChild(icon)
+  iconEl.appendChild(icon); 
   };
 
+//function to clear content in HTML for icon, name and calories when new route is submitted
+  function clearBox() { 
+    iconEl.innerHTML = ""
+    userName.innerHTML = ""
+    userCalories.innerHTML = ""
+}; 
+// function to display previous burns in table
   function displayPreviousBurns() {
     historyListEl.innerHTML = ''; // Clear previous content
   
@@ -208,7 +201,7 @@ function displayIcon () {
   
       // historyListEl.appendChild(listItem);
     }
-  }
+ };
   
   // function displayPreviousBurns() {
     
@@ -232,3 +225,10 @@ function displayIcon () {
   
   // Call this function after the page loads to display any existing records
   displayPreviousBurns();
+  
+
+ 
+
+
+
+  
