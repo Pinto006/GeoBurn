@@ -27,12 +27,13 @@ var nameEl = document.querySelector('#your-name');
 var startEl = document.querySelector('#starting-point');
 var endEl = document.querySelector('#ending-point');
 var caloriesBurnedEl = document.querySelector('#calories-burned')
-var historyListEl = document.querySelector('#history-list')
+var historyListEl = document.querySelector('#history-list');
 var searchHistory = [];
 var iconEl = document.querySelector('#icon');
 var userName = document.querySelector('#userName');
 var userCalories = document.querySelector('#userCalories');
-
+var activity;
+var entryArray = [];
 
 submitBtn.addEventListener('click', function(event) {
   event.preventDefault();
@@ -108,12 +109,8 @@ fetch(apiUrl, {
 .then(function(data) {
   console.log(data);
   var caloriesBurned = data[0].total_calories;
-
-  var caloriesBurned = data[0].total_calories;
-
-
   // Save data to local storage
-  var timestamp = Date.now().toString();
+  // var timestamp = Date.now().toString();
   var entry = {
     name: nameEl.value,
     start: startEl.value,
@@ -121,12 +118,9 @@ fetch(apiUrl, {
     caloriesBurned: caloriesBurned,
     activity: activity
   };
-  localStorage.setItem(timestamp, JSON.stringify(entry));
-
-
-
-
-
+  entryArray.push(entry);
+  localStorage.setItem("entries", JSON.stringify(entryArray));
+  displayPreviousBurns();
 
   displayCaloriesBurned(caloriesBurned);
   displayIcon();
@@ -137,8 +131,9 @@ fetch(apiUrl, {
 
 }
 
+
 function displayCaloriesBurned(caloriesBurned) {
-  
+
   const div = document.createElement('div');
   const name = document.createElement('h1');
   const calories = document.createElement('h2');
@@ -150,42 +145,37 @@ function displayCaloriesBurned(caloriesBurned) {
  
   userName.appendChild(name);
   userCalories.appendChild(calories);
-    
- };
-function displayIcon () {
-var icon = document.createElement("img");
-console.log(activityEl.value);
-if (activityEl.value === 'bicycle') {
-  icon.src = 'images/Bike-Icon.png'
-} else {
-  icon.src = 'images/Walking-Icon.png'
-}
+  // caloriesBurnedEl.textContent = 'Total Calories Burned: ' + caloriesBurned;
 
-iconEl.appendChild(icon)
 };
 
-function displayPreviousBurns() {
-  historyListEl.innerHTML = ''; // Clear previous content
-
-  for (var i = 0; i < localStorage.length; i++) {
-    var key = localStorage.key(i);
-    var entry = JSON.parse(localStorage.getItem(key));
-
-    // Create HTML elements to display the entry
-    var listItem = document.createElement('li');
-  
-    listItem.textContent = `${entry.name}: ${entry.start} to ${entry.end}, Calories Burned: ${entry.caloriesBurned}, Activity: ${entry.activity}`;
-
-    historyListEl.appendChild(listItem);
+function displayIcon () {
+  var icon = document.createElement("img");
+  console.log(activityEl.value);
+  if (activityEl.value === "bicycle") {
+    icon.src = 'images/Bike-Icon.png'
+  } else {
+    icon.src = 'images/Walking-Icon.png'
   }
-}
+  
+  iconEl.appendChild(icon)
+  };
 
-// Call this function after the page loads to display any existing records
-displayPreviousBurns();
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.dropdown-trigger');
-    var instances = M.Dropdown.init(elems);
-  });
-
+  function displayPreviousBurns() {
+    historyListEl.innerHTML = ''; // Clear previous content
+  
+    entryArray = JSON.parse(localStorage.getItem("entries")) || [];
+  
+    for (var i = 0; i < entryArray.length; i++) {
+  
+      // Create HTML elements to display the entry
+      var listItem = document.createElement('li');
+    
+      listItem.textContent = `${entryArray[i].name}: ${entryArray[i].start} to ${entryArray[i].end}, Calories Burned: ${entryArray[i].caloriesBurned}, Activity: ${entryArray[i].activity}`;
+  
+      historyListEl.appendChild(listItem);
+    }
+  }
+  
+  // Call this function after the page loads to display any existing records
+  displayPreviousBurns();
