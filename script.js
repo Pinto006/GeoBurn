@@ -26,7 +26,7 @@ submitBtn.addEventListener('click', function(event) {
   var activity = activityEl.value;
   var start = startEl.value;
   var end = endEl.value;
-  
+  console.log(activity);
   getTimeDuration(activity, start, end);
   
 });

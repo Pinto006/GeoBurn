@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.17/css/uikit.min.css" integrity="sha512-bdKYByq3CFZz8StnLjTtS9l/QwbsknOH91iuT+PxgYF2t70s9bTDuBcMwgBtcEV2+NkMt923aqjfTLSqCxK8Jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.17/js/uikit.min.js" integrity="sha512-Q6uq6qad2+bzWFT6SDVx1GbSQzTS20HImFsQq124EkLeuMFd/LQtrbXjEYi+9umR2V4+sSwz3T9N6oPA6oYiKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Link to stylesheet -->
@@ -14,9 +16,28 @@
     <title>GeoBurn</title>
 </head>
 
-<header>GeoBurn</header>
 <body>
-    <div class="container">
+  <nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+
+            <div class="uk-navbar-center">
+
+                <div class="uk-navbar-center-left">
+                    <ul class="uk-navbar-nav">
+                    </ul>
+                </div>
+                <a class="uk-navbar-item uk-logo" href="#">GeoBurn</a>
+                <div class="uk-navbar-center-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a class="nav-link" href="#history-list">Previous Burns</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="container" id="container">
         <div class="search">
         <br>
         <!-- User fills out form -->
@@ -77,7 +98,6 @@
     </div>
        
       </div>
-    
     <script src="script.js"></script>
 </body>
 </html>

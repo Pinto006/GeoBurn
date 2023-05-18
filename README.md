@@ -2,12 +2,14 @@
 
 ## Description
 
-This webpage was built to assist the user in determining how many calories a specific route will burn. This site is meant to be used only for 2 activities: walking and biking. This will give the user the ability to plan more effectively rather than having that info after the walk or bike ride is complete. When building this site, we utilized local storage, Geoapify API and Calorie Burned API via API Ninjas.  GeoApify was used to gather the longitude and latitude from the starting and end points given by the user.  Then called on again to gather the duration time of the route based on the activity chosen.  Then the Calories Burned API was called to tell us how many calories are burned doing X activity for X amount of minutes.  We also used the CSS library, Materialize.  
+This webpage was built to assist the user in determining how many calories a specific route will burn. This site is meant to be used only for 2 activities: walking and biking. This will give the user the ability to plan more effectively rather than having that info after the walk or bike ride is complete. When building this site, we utilized local storage, Geoapify API and Calorie Burned API via API Ninjas.  GeoApify was used to gather the longitude and latitude from the starting and end points given by the user.  Then called on again to gather the duration time of the route based on the activity chosen.  Then the Calories Burned API was called to tell us how many calories are burned doing X activity for X amount of minutes.  We also used the CSS library, UIKit.  
 
 ## Technologies Used 
 Ninjas API - https://api-ninjas.com/api/caloriesburned
+
 GeoApify - https://apidocs.geoapify.com/
-Materialize - https://materializecss.com/
+
+UIKit - https://getuikit.com/
 
 ## Installation
 
@@ -19,13 +21,15 @@ The user will load the webpage and complete the form.  The form includes the use
 
 ## Screenshot
 
-**  add screenshot  **
+![Alt Text](Images/Screenshot.png)
 
 
 ## Credits
 
 Mallorie Pinto
+
 Gene Suhir
+
 Francisco Verdugo Del Real
 
 ## License
