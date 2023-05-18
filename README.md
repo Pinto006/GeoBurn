@@ -21,7 +21,7 @@ The user will load the webpage and complete the form.  The form includes the use
 
 ## Screenshot
 
-![Alt Text](Images/Screenshot.png)
+![Alt Text](images/Screenshot.png)
 
 
 ## Credits
