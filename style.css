@@ -56,6 +56,7 @@ input::placeholder{
     margin-right: 0px;
     min-width: 100%;
     padding-bottom: 30px;
+    
   }
   
   .search input {
@@ -112,14 +113,14 @@ input::placeholder{
     cursor: pointer;
   }
   
-  .history li:hover {
-    text-decoration: underline;
-  }
-
   #your-name, #your-weight, #activity, #starting-point, #ending-point {
     border: 1px solid black;
     margin: 10px;
     border-radius: 5px;
+    font-weight: bold;
+    opacity: .9;
+    color: grey;
+    font-size: 20px;
   }
 
   #history-list li button {
@@ -141,7 +142,7 @@ input::placeholder{
     background-position: right;
     background-size: 1.5em;
     font-weight: bold;
-    opacity: .5;
+    opacity: .8;
     color: grey;
     font-size: 20px;
 }
