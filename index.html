@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <!-- <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- <link rel="stylesheet" href="francisco.css" /> -->
+<!-- Link to stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
     <title>GeoBurn</title>
@@ -21,12 +19,13 @@
     <div class="container">
         <div class="search">
         <br>
+        <!-- User fills out form -->
           <form class="form">
             <h2>Let's get ready to burn!</h2>
             <input type="text" id="your-name" placeholder=" Your Name">
             <br>
             <input type="text" id="your-weight" placeholder=" Your Weight (in pounds) -- Be Honest!">
-            <!-- <input type="text" id="activity" placeholder="Select your activity..."> -->
+            <!-- Drop-down menu -->
             <select id="activity">
               <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option>
               <option value="walk">Walking</option>
@@ -34,20 +33,20 @@
             </select>
             <input type="text" id="starting-point" placeholder=" Where are you starting?">
             <input type="text" id="ending-point" placeholder=" Where are you going?">
-            <button type="submit" id="search-btn">Let's Get Burnin'!</button> 
+            <button type="submit" id="search-btn">Let's Burn!</button> 
           </form>
 
           <br>
+          <!-- Displaying user's name, calories, and icon for activity -->
           <div class="userInfo">
             <div id="userName"></div>
             <div id="userCalories"></div>
             <div id="icon"></div>
           </div>
-          <hr>
           <br>
           </div>
-          <div class="history">
-            
+          <!-- Dispalying past activity info in a table-->
+          <div class="history">           
             <h4>Previous Burns:</h4>
             <br>
             <table class="previous-burns">
@@ -69,10 +68,10 @@
                 </tr>
               </tbody>
             </table>
+
             <ul id="history-list"></ul>
           </div>
         </div>
-    <div class="map">
     <div id="calories-burned"></div>
     <div id="'time-burned"></div>
     </div>
@@ -80,6 +79,5 @@
       </div>
     
     <script src="script.js"></script>
-       <!-- <script type="text/javascript" src="/materialize.min.js"></script> -->
 </body>
 </html>

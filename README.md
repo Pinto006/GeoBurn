@@ -2,7 +2,7 @@
 
 ## Description
 
-This webpage was built to assist the user in dertermining how many calories a specific route will burn. This site is meant for to be used only for the activities, walking and biking. This will give the user the ability to plan more effectively rather than having that info after the walk or bike ride is complete. When builing this site we utilized local storage, Geoapify API and Calorie Burned API via API Ninjas.  GeoApify was used to gather the longitude and latitude from the starting and end points given by the user.  Then called on again to gather the duration time of the route based on the activity chosen.  Then the Calories Burned API was called to tell us how many calories are burned doing X activity for X amount of minutes.  We also used the CSS library, Materialize.  
+This webpage was built to assist the user in determining how many calories a specific route will burn. This site is meant to be used only for 2 activities: walking and biking. This will give the user the ability to plan more effectively rather than having that info after the walk or bike ride is complete. When building this site, we utilized local storage, Geoapify API and Calorie Burned API via API Ninjas.  GeoApify was used to gather the longitude and latitude from the starting and end points given by the user.  Then called on again to gather the duration time of the route based on the activity chosen.  Then the Calories Burned API was called to tell us how many calories are burned doing X activity for X amount of minutes.  We also used the CSS library, Materialize.  
 
 ## Technologies Used 
 Ninjas API - https://api-ninjas.com/api/caloriesburned
@@ -11,11 +11,13 @@ Materialize - https://materializecss.com/
 
 ## Installation
 
-GeoBurn URL: 
+GeoBurn URL:  https://pinto006.github.io/GeoBurn/
 
 ## Usage
 
-The user will load the webpage and complete the form.  The form includes the users name, weight, activiy choice, starting point, and ending point.  These paramaters are used when calling the two APIs to eventually give the user the total calories expected to burn on their planned walk or bike ride.  Once the form is completed again and submitted the original information about the burn will display under "Previous Burns".  The page will save a max of 10 previous burns.  
+The user will load the webpage and complete the form.  The form includes the user's name, weight, activity choice, starting point, and ending point.  These paramaters are used when calling the two APIs to eventually give the user the total calories expected to burn on their planned walk or bike ride.  Once the form is completed again and submitted, the original information about the burn will display under "Previous Burns".    
+
+## Screenshot
 
 **  add screenshot  **
 
