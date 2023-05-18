@@ -1,47 +1,75 @@
 * {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
-header {
-    text-align: center;
-    font-size: 60px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background-color: rgb(235, 93, 93);
-    color: whitesmoke;
-    padding: 20px;
-    margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-body{
+.uk-navbar-container {
+  text-align: center;
+  font-size: 60px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-color: rgb(235, 93, 93) !important;
+  color: whitesmoke;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.uk-logo {
+  color: whitesmoke;
+  font-size: 60px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+.nav-link {
+  color: whitesmoke !important;
+  font-size: 15px !important;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+}
+
+body {
   background-color: whitesmoke;
 }
 
-input{
+input {
   margin-top: .5rem;
   font: 15px;
 }
 
-input::placeholder{
+input::placeholder {
   font-weight: bold;
   opacity: .5;
   color: grey;
   font-size: 20px;
 }
 
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+}
+
+.form {
+  min-width: 50%;
+}
+
+#icon img {
+  width: 300px;
+  height: 300px;
+}
+
   .search {
+    display: flex;
     flex-basis: 30%;
     margin-right: 0px;
+    min-width: 100%;
+    padding-bottom: 30px;
+    
   }
   
   .search input {
@@ -60,60 +88,29 @@ input::placeholder{
     color: white;
     cursor: pointer;
   }
-  
-  .search button:hover {
-    background-color: rgb(235, 93, 93);;
-  }
 
-  .weather {
-    flex-basis: 65%;
-  }
-  
-  #current-weather {
-    margin-bottom: 20px;
-  }
-  
-  #current-weather h2 {
-    font-size: 36px;
-  }
-  
-  #current-weather img {
-    vertical-align: middle;
-  }
-  
-  #current-weather p {
-    font-size: 24px;
-    margin-top: 10px;
-  }
-  
-  #forecast {
-    display: flex;
-    flex-wrap: wrap;
+#search-btn {
+  width: 82%;
+  padding: 20px;
+  font-size: 30px;
+}
 
-    justify-content: space-between;
-  }
-  
-  .forecast-item {
-    flex-basis: calc(20% - 10px);
-    margin-bottom: 20px;
-    background-color: rgb(3, 3, 78);
-    color: whitesmoke;
-    border: 2px solid black;
-  }
-  
-  .forecast-item h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .forecast-item img {
-    vertical-align: middle;
-  }
-  
-  .history {
-    flex-basis: 30%;
-  }
-  
+.search button:hover {
+  background-color: rgb(235, 93, 93);
+  ;
+}
+
+.history {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(240, 168, 35, 0.329);
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.history h4 {
+  text-align: center;
+}
+
   .history h3 {
     font-size: 24px;
     margin-bottom: 10px;
@@ -130,19 +127,19 @@ input::placeholder{
     cursor: pointer;
   }
   
-  .history li:hover {
-    text-decoration: underline;
-  }
-
   #your-name, #your-weight, #activity, #starting-point, #ending-point {
     border: 1px solid black;
     margin: 10px;
     border-radius: 5px;
+    font-weight: bold;
+    opacity: .9;
+    color: grey;
+    font-size: 20px;
   }
 
-  #history-list li button {
-    width: 80%;
-  }
+#history-list li button {
+  width: 80%;
+}
 
   #activity {
     padding: 10px; 
@@ -157,49 +154,54 @@ input::placeholder{
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M422.7 213.3c-4.7-4.7-12.3-4.7-17 0L256 352 106.3 213.3c-4.7-4.7-12.3-4.7-17 0s-4.7 12.3 0 17l149.3 149.3c4.7 4.7 12.3 4.7 17 0l149.3-149.3c4.6-4.6 4.6-12.3-.2-16.9z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right;
-    background-size: 1.5em; 
-}
 
-thead {
-  
+
 }
 
 .previous-burns {
   width: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 .previous-burns h2 {
   text-align: center;
+
 }
 
 .previous-burns table {
   width: 100%;
   border-collapse: collapse;
+
 }
 
-.previous-burns th, .previous-burns td {
+.previous-burns th,
+.previous-burns td {
   padding: 8px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #ccc;
+
 }
 
 .previous-burns th {
   background-color: #f2f2f2;
 }
 
+/* 
 .dropdown-trigger { 
   font-weight: bold;
   opacity: .5;
   font-size: 22px;
   color: grey;
   background-color: white;
-  outline: black solid;
-} 
+  outline: black solid; */own
+}  */
+#userName {
+  text-align: center;
+  font-size: 40px;
+}
 
-
-  /* /* Move search field, search button, and history to the left* */
 
   /* form {
     display: flex;
@@ -276,3 +278,8 @@ thead {
         /* } */
 
 }
+
+#userCalories {
+  text-align: center;
+}
+

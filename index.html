@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -12,22 +13,49 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- <link rel="stylesheet" href="francisco.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.17/css/uikit.min.css" integrity="sha512-bdKYByq3CFZz8StnLjTtS9l/QwbsknOH91iuT+PxgYF2t70s9bTDuBcMwgBtcEV2+NkMt923aqjfTLSqCxK8Jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.16.17/js/uikit.min.js" integrity="sha512-Q6uq6qad2+bzWFT6SDVx1GbSQzTS20HImFsQq124EkLeuMFd/LQtrbXjEYi+9umR2V4+sSwz3T9N6oPA6oYiKg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<!-- Link to stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
     <title>GeoBurn</title>
 </head>
 
-<header>GeoBurn</header>
 <body>
-    <div class="container">
+  <nav class="uk-navbar-container">
+    <div class="uk-container">
+        <div uk-navbar>
+
+            <div class="uk-navbar-center">
+
+                <div class="uk-navbar-center-left">
+                    <ul class="uk-navbar-nav">
+                    </ul>
+                </div>
+                <a class="uk-navbar-item uk-logo" href="#">GeoBurn</a>
+                <div class="uk-navbar-center-right">
+                    <ul class="uk-navbar-nav">
+                        <li><a class="nav-link" href="#history-list">Previous Burns</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <div class="container" id="container">
         <div class="search">
         <br>
-          <form>
+        <!-- User fills out form -->
+          <form class="form">
             <h2>Let's get ready to burn!</h2>
             <input type="text" id="your-name" placeholder=" Your Name">
             <br>
             <input type="text" id="your-weight" placeholder=" Your Weight (in pounds) -- Be Honest!">
+
             <!-- <input type="text" id="activity" placeholder="Select your activity..."> -->
             <!-- <select id="activity"> -->
             <a class="dropdown-trigger btn" href="#" data-target="activity">Select Activity<i class="large material-icons">arrow_drop_down</i></a>
@@ -41,21 +69,31 @@
               <!-- <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option> -->
               <!-- <option value="walk">Walking</option> -->
               <!-- <option value="bicycle">Bicycling</option> -->
+
+            <!-- Drop-down menu -->
+            <select id="activity">
+              <option value="" placeholder="Select your activity..." disabled selected>Select your activity...</option>
+              <option value="walk">Walking</option>
+              <option value="bicycle">Bicycling</option>
+
             </select>
             
             <input type="text" id="starting-point" placeholder=" Where are you starting?">
             <input type="text" id="ending-point" placeholder=" Where are you going?">
-            <button type="submit" id="search-btn">Let's Get Burnin'!</button>
-            
+            <button type="submit" id="search-btn">Let's Burn!</button> 
           </form>
+
           <br>
-          <div id="userName"></div>
-          <div id="userCalories"></div>
-          <div id="icon"></div>
-          <hr>
+          <!-- Displaying user's name, calories, and icon for activity -->
+          <div class="userInfo">
+            <div id="userName"></div>
+            <div id="userCalories"></div>
+            <div id="icon"></div>
+          </div>
           <br>
-          <div class="history">
-            
+          </div>
+          <!-- Dispalying past activity info in a table-->
+          <div class="history">           
             <h4>Previous Burns:</h4>
             <br>
             <table class="previous-burns">
@@ -65,14 +103,11 @@
                     <th>Starting</th>
                     <th>End</th>
                     <th>Calories Burned </th>
-                    <th> Activity</th>
-
-
+                    <th>Activity</th>
                 </tr>
               </thead>
       
-              <tbody class = "prevBurns">
-                  
+              <tbody class = "prevBurns">  
                 <tr>
                   <td></td>
                   <td></td>
@@ -80,18 +115,19 @@
                 </tr>
               </tbody>
             </table>
+
             <ul id="history-list"></ul>
           </div>
         </div>
-    <div class="map">
     <div id="calories-burned"></div>
     <div id="'time-burned"></div>
     </div>
        
       </div>
-    
     <script src="script.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- <script type="text/javascript" src="/materialize.min.js"></script> -->
+
 </body>
 </html>
